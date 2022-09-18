@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Python base</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="node_modules/highlight.js/styles/github-gist.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+            --color-key: #0099cc;
+            --diagonal: linear-gradient( 135deg, var(--color-key) 65%, #F7E25E 65%, #F7E25E 100% );
+        }
+        table td, table th {
+            vertical-align: top;
+        }
+        code mark.important span {
+            color: #fff;
+        }
+        .condensed code {
+            line-height: 1.3 !important;
+        }
+        .pl {
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Python base</h1>
+    </header>
+
+    <section class="slide">
+        <h2 class="shout">Python base</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Значения</h2>
+        <b>набор знаков, представляющие другие объекты</b>
+        <table>
+            <tr>
+                <th></th>
+                <th>значение</th>
+                <th>пример</th>
+            </tr>
+            <tr>
+                <td width="26%"></td>
+                <td><pre><code>True</code></pre></td>
+                <td><pre><code>print(True)  # True</code></pre></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><pre><code>42</code></pre></td>
+                <td><pre><code>print(42)  # 42</code></pre></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><pre><code>42.5</code></pre></td>
+                <td><pre><code>print(42.5)  # 42.5</code></pre></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><pre><code>'кошка'</code></pre></td>
+                <td><pre><code>print('кошка')  # кошка</code></pre></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2>Типы</h2>
+        <b>определяют, что какие операции можно делать со значениями</b>
+        <table>
+            <tr>
+                <th></th>
+                <th>значение</th>
+                <th>тип</th>
+                <th></th>
+                <th>операции</th>
+            </tr>
+            <tr>
+                <td width="26%"></td>
+                <td><pre><code>True</code></pre></td>
+                <td>bool</td>
+                <td>логический</td>
+                <td><pre><code>not</code></pre></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><pre><code>42</code></pre></td>
+                <td>int</td>
+                <td>число</td>
+                <td><pre><code>+ - * /</code></pre></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><pre><code>42.5</code></pre></td>
+                <td>float</td>
+                <td>число с плав. точкой</td>
+                <td><pre><code>+ - * /</code></pre></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><pre><code>'кошка'</code></pre></td>
+                <td>string</td>
+                <td>строчка</td>
+                <td><pre><code>+</code></pre></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2>Типы — пример</h2>
+        <pre><code>print(not True)  # False
+print(42 * 2)  # 84
+print('кошка' + ' ' + 'ест корм')  # кошка ест корм
+
+# TypeError: can't multiply sequence by non-int of type 'str'
+print('кошка' * ' ' * 'ест корм')  
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Переменные</h2>
+        <b>место, где хранятся значения</b>
+        <table>
+            <tr>
+                <th>переменная</th>
+                <th>значение</th>
+                <th>тип</th>
+                <th></th>
+                <th>операции</th>
+            </tr>
+            <tr>
+                <td width="26%"><pre><code>is_enabled = </code></pre></td>
+                <td><pre><code>True</code></pre></td>
+                <td>bool</td>
+                <td>логический</td>
+                <td><pre><code>not</code></pre></td>
+            </tr>
+            <tr>
+                <td><pre><code>num = </code></pre></td>
+                <td><pre><code>42</code></pre></td>
+                <td>int</td>
+                <td>число</td>
+                <td><pre><code>+ - * /</code></pre></td>
+            </tr>
+            <tr>
+                <td>num_half = </td>
+                <td><pre><code>42.5</code></pre></td>
+                <td>float</td>
+                <td>число с плав. точкой</td>
+                <td><pre><code>+ - * /</code></pre></td>
+            </tr>
+            <tr>
+                <td><pre><code>animal = </code></pre></td>
+                <td><pre><code>'кошка'</code></pre></td>
+                <td>string</td>
+                <td>строчка</td>
+                <td><pre><code>+</code></pre></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2>Переменные — пример</h2>
+        <pre><code>num = 42  # объявление числовой переменной
+print(num)  # используем (печатаем) переменную
+
+multiplied_num = num * 2  # выполнение операции с записью
+print(multiplied_num)
+
+print(multiplied_num * 2)  # выполнение операции и печать
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Операторы</h2>
+        <table>
+            <tr>
+                <th>присваивание</th>
+                <td width="20%"><pre><code>=</code></pre></td>
+                <td width="40%"><pre><code>num = 42  # 42</code></pre></td>
+            </tr>
+            <tr>
+                <th>сравнение</th>
+                <td><pre><code>==</code></pre></td>
+                <td><pre><code>num == 42  # True</code></pre></td>
+            </tr>
+            <tr>
+                <th>отрицание</th>
+                <td><pre><code>!=</code></pre></td>
+                <td><pre><code>num != 42  # False</code></pre></td>
+            </tr>
+        </table>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Операторы</h2>
+        <table>
+            <tr>
+                <th>и <small>логическое</small></th>
+                <td width="20%"><pre><code>and</code></pre></td>
+                <td width="40%"><pre><code>a == 30 and b == 40  # False</code></pre></td>
+            </tr>
+            <tr>
+                <th>или <small>логическое</small></th>
+                <td><pre><code>or</code></pre></td>
+                <td><pre><code>a == 30 or b == 40  # True</code></pre></td>
+            </tr>
+            <tr>
+                <th>арифметические</th>
+                <td><pre><code>+ - * / </code></pre></td>
+                <td><pre><code>2 + 2  # 4</code></pre></td>
+            </tr>
+        </table>
+        <pre><code>result = a == 30 or b == 40 and num != 42 * 2  # комбинация</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>Функция</h2>
+        <table>
+            <tr>
+                <th width="25%">выполняет</th>
+                <td><i>операции</i></td>
+            </tr>
+            <tr>
+                <th>принимает</th>
+                <td><i>аргументы</i></td>
+            </tr>
+            <tr>
+                <th>возвращает</th>
+                <td><i>значения</i></td>
+            </tr>
+        </table>
+        <b><code>()</code> — скобки вызывают функцию</b>
+        <pre><code>print  # ничего не произойдет
+print()  # вызов функции
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Функция <code>print</code></h2>
+        <table>
+            <tr>
+                <th width="25%">выполняет</th>
+                <td>печатает информацию на экран</td>
+            </tr>
+            <tr>
+                <th>принимает</th>
+                <td>значения для печати любых типов</td>
+            </tr>
+            <tr>
+                <th>возвращает</th>
+                <td><i>ничего</i></td>
+            </tr>
+        </table>
+        <pre><code>print('кошка')  # кошка
+print(42 * 4)  # 84
+</code></pre> 
+    </section>
+
+    <section class="slide">
+        <h2>Функция <code>input</code></h2>
+        <table>
+            <tr>
+                <th width="25%">выполняет</th>
+                <td>чтение с экрана</td>
+            </tr>
+            <tr>
+                <th>принимает</th>
+                <td>текст для вывода на консоль перед чтением (необ.)</td>
+            </tr>
+            <tr>
+                <th>возвращает</th>
+                <td><pre><code>string</code></pre></td>
+            </tr>
+        </table>
+        <pre><code>animal = input()  # Вводим: кошка
+print(animal)  # кошка</code></pre>
+    </section>
+
+        <section class="slide">
+        <h2>Функция <code>input</code></h2>
+        <pre><code># Напечатается "Введите имя кошки", потом предложат ввести имя
+name = input('Введите имя кошки')  
+print(name)  # Барсик
+
+num = input()  # Вводим 42
+print(num * 2)  # 4242
+<mark># 42 - строчка, поэтому умножается как строчка, а не число</mark>
+</code></pre>
+    </section>
+    
+    <section class="slide">
+        <h2>Функции превращения типов</h2>
+        <pre><code>str_num = input()  # Вводим 42
+print(str_num * 2)  # 4242
+num = <mark>int(str_num)</mark>  # превратили в число
+print(str_num * 2)  # 84
+# превращаем в логический тип
+print(<mark>bool(num)</mark>)  # True      
+print(<mark>bool(0)</mark>)  # False</code></pre>
+    </section>
+    
+    <section class="slide">
+        <h2>Функции над типами</h2>
+        <pre><code>animal = "Кошка"
+animal.upper()  # КОШКА - превращение в верхний регистр
+#                 ^^^^^ возвращаемое значение
+animal.lower()  # кошка - превращение в нижний
+animal.find('ш')  # 2 - найти позицию символа
+#           ^^^ принимаемое значение
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Ссылочные<br>типы</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Тип "список" (list)</h2>
+        <pre><code>lst = [1, 2, 3]
+lst[0]  # 1 - индексация с начала (с 0)
+#   ^ индекс
+lst[-1]  # 3 - индексация с конца
+2 in lst  # True - проверяет наличие элемента в списке
+lst.append(4)  # добавляет элемент в список
+print(lst)  # [1, 2, 3, 4]
+</code></pre>
+    </section>
+
+        <section class="slide">
+        <h2>Тип "кортеж" (tuple) - неизменяемый</h2>
+        <pre><code>tup = <mark>(</mark>1, 2, 3<mark>)</mark>
+tup[0]  # 1 - индексация с начала (с 0)
+#   ^ индекс
+tup[-1]  # 3 - индексация с конца
+2 in tup  # True - проверяет наличие элемента в списке
+<mark>tup.append(4)  # нельзя</mark>
+first, second, third = tup  # распакова в отдельные переменные
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Тип "словарь" (dict)</h2>
+        <pre><code>eng_rus_dict = {
+    "car": "машина",
+    "cat": "кошка"
+}
+eng_rus_dict["car"]  # машина - получение элемента
+"animal" in eng_rus_dict  # False - проверка наличия в словаре
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Тип "словарь" (dict)</h2>
+        <pre><code># получение списков
+eng_rus_dict.values()  # значения: ["машина", "кошка"]
+eng_rus_dict.keys()  # ключи: ["car", "cat"]
+
+# кортежи с ключами и значениями
+eng_rus_dict.items()  # [ ("car", "машина"), ("cat", "кошка") ]
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Объекты</h2>
+        <pre><code># создаем объект с параметрами и записываем его в переменную
+point = Point(10, 15)  
+# свойства — переменные в объекте
+print(point.<mark>x</mark>)  # печатаем значение свойства x
+# метод - функция в объекте
+point.<mark>draw()</mark>  # отрисовываем точку
+</code></pre>
+    </section>
+    
+    <section class="slide">
+        <h2 class="shout">Условия<br>и циклы</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Условия</h2>
+        <pre><code>if "car" in eng_rus_dict:  # проверка логического условия
+#   ^^^^^^^^^^^^^^^^^^^^ вернет bool (True или False)
+    print('Машина есть в словаре')
+elif "cat" in eng_rus_dict:
+    print('Кошка есть в словаре')
+else:
+    print('Ничего нет в словаре')
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Функция <code>range</code></h2>
+        <table>
+            <tr>
+                <th width="25%">выполняет</th>
+                <td>генерирует числовые последовательности</td>
+            </tr>
+            <tr>
+                <th>принимает</th>
+                <td><code>макс. число</code> или <code>мин. число, макс. число</code> или ...</td>
+            </tr>
+            <tr>
+                <th>возвращает</th>
+                <td><pre><code>tuple  # (0, 1, 2, 3, 4, ...)</code></pre></td>
+            </tr>
+        </table>
+        <pre><code>range(4)  # (0, 1, 2, 3)
+range(2, 5)  # (2, 3)</code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>for</code></h2>
+        <b>повторяет операцию несколько раз</b>
+        <pre><code>for i in range(4):  # 4 раз печатаем значение счетчика
+    print(i)
+# 0
+# 1
+# 2
+# 3
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>for</code></h2>
+        <b>принудительный выход</b>
+        <pre><code>for i in range(4):
+    print(i)
+    if i == 1:
+        <mark>break</mark>
+# 0
+# 1
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>for</code></h2>
+        <b>пропуск шага</b>
+        <pre><code>for i in range(4):
+    if i == 1:
+        <mark>continue</mark>
+    print(i) 
+# 0
+# 2
+# 3
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>for</code></h2>
+        <b>перебор списка</b>
+        <pre><code>lst = ["картошка", "капуста", "хлеб"]
+for item in lst:
+    print(item)
+# картошка
+# капуста
+# хлеб
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>for</code></h2>
+        <b>перебор словаря</b> <small>— <code>items()</code> возвращает список кортежей</small>
+        <pre><code>for item in eng_rus_dict.items():  # [ ("car", "машина"), ... ]
+    eng_word, rus_word = item  # распаковываем кортеж
+    print(eng_word, rus_word)  # печатаем значения двух 
+                               # переменных подряд 
+# car машина
+# cat кошка
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>for</code></h2>
+        <b>перебор словаря — распаковываем сразу</b>
+        <pre><code>for <mark>eng_word, rus_word</mark> in eng_rus_dict.items():
+    print(eng_word, rus_word)  # печатаем значения 
+# car машина
+# cat кошка
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл <code>while</code></h2>
+        <b>работает, пока выполняется условие</b>
+        <pre><code>i = 0
+while <mark>i != 5</mark>:  # пока i не станет 5
+    i += 1  # прибавляем и присваиваем
+print(i)  # 5 - свершилось
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Типы<br>алгоритмов</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Последовательность</h2>
+        <b>список шагов для выполнения</b>
+        <ol>
+            <li>Встать</li>
+            <li>Почистить зубы</li>
+            <li>Сделать зарядку</li>
+            <li>Поесть</li>
+        </ol>
+    </section>
+    
+    <section class="slide">
+        <h2>Условие</h2>
+        <b>список шагов для выполнения</b>
+        <ol>
+            <li>
+                <mark><b>если</b> дверь в ванную закрыта <b>то</b></mark>
+                <ol>
+                    <li><mark>Открыть дверь</mark></li>
+                </ol>
+            </li>
+            <li>Почистить зубы</li>
+        <oll>
+    </section>
+
+    <section class="slide">
+        <h2>Цикл</h2>
+        <b>повтор действий</b>
+        <ol>
+            <li>
+                <b>для</b> каждого зуба <b>делать</b>
+                <ol>
+                    <li>Почистить поверхность</li>
+                    <li>Почистить с внешней стороны</li>
+                    <li>Почистить с внутренней стороны</li>
+                </ol>
+            </li>
+        <oll>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Задача</h2>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b class="next">Определяем шаги</b>
+        <ol>
+            <li class="next">Прочитать текст</li>
+            <li class="next">Пройтись по тексту</li>
+            <li class="next">Найти буквы "а"</li>
+            <li class="next">Вывести результат на экран</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b>Определяем тип каждого шага</b>
+        <ol>
+            <li>Прочитать текст — <mark>функция</mark></li>
+            <li>Пройтись по тексту — <b>перебрать весь текст</b> — <mark>цикл</mark></li>
+            <li>Найти буквы "а" — <b>если это буква "a", посчитать ее</b> — <mark>условие</mark></li>
+            <li>Вывести результат на экран — <mark>функция</mark></li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b>Переносим в код</b> <small>в виде комментариев</small>
+        <pre>
+            <code># Прочитать текст — <mark>функция</mark></code>
+            <code># Перебрать весь текст — <mark>цикл</mark></code>
+            <code># Если это буква "a", посчитать ее — <mark>условие</mark></code>
+            <code># Вывести результат на экран — <mark>функция</mark></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b>Читаем</b>
+        <pre>
+            <code class="mark">text = input()</code>
+            <code># Перебрать весь текст — цикл</code>
+            <code># Если это буква "a", посчитать ее — условие</code>
+            <code># Вывести результат на экран — функция</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b>Пишем цикл</b>
+        <pre>
+            <code>text = input()</code>
+            <code class="mark">for symbol in text:</code>
+            <code># Если это буква "a", посчитать ее — условие</code>
+            <code># Вывести результат на экран — функция</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b>Условие — выполняется для каждого символа. Значит в цикле.</b>
+        <pre>
+            <code>text = input()</code>
+            <code>for symbol in text:</code>
+            <code class="mark">  if symbol == "a":</code>
+            <code>  # посчитать ее - <mark  class="next">считать надо в какую-то переменную</mark></code>
+            <code># ...</code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <b>Создаем счетчик и считаем</b>
+        <pre>
+            <code>text = input()</code>
+            <code class="mark">counter = 0</code>
+            <code>for symbol in text:</code>
+            <code>  if symbol == "a":</code>
+            <code class="mark">      counter += 1</code>
+            <code># ...</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>Посчитать количество букв "а" в тексте</small></h2>
+        <pre>
+            <code>text = input()</code>
+            <code>counter = 0</code>
+            <code>for symbol in text:</code>
+            <code>  if symbol == "a":</code>
+            <code>      counter += 1</code>
+            <code class="mark">print(counter)  # печатаем</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Табы (отступы) — это важно</h2>
+        <pre>
+            <code>text = input()</code>
+            <code>counter = 0</code>
+            <code>for symbol in text:</code>
+            <code><mark class="comment">&lt;tab&gt;</mark>if symbol == "a":</code>
+            <code><mark class="comment">&lt;tab&gt;&lt;tab&gt;</mark>counter += 1</code>
+            <code>print(counter)</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Табы (отступы) — блок "цикл"</h2>
+        <pre>
+            <code>text = input()</code>
+            <code>counter = 0</code>
+            <code>for symbol in text:</code>
+            <code>  <mark>if symbol == "a":</mark></code>
+            <code>      <mark>counter += 1</mark></code>
+            <code>print(counter)</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Табы (отступы) — блок "условие"</h2>
+        <pre>
+            <code>text = input()</code>
+            <code>counter = 0</code>
+            <code>for symbol in text:</code>
+            <code>  if symbol == "a":</code>
+            <code>      <mark>counter += 1</mark></code>
+            <code>print(counter)</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Модули и импорты</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Импорт — подключение готовых решений к файлу</h2>
+        <pre>
+            <code class="mark">import math  # подключаем модуль math</code>
+            <code># использование: возводим 2 в степень 3</code>
+            <code>pow = math.pow(2, 3)</code>
+            <code>print(pow)  # 8</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Импорт — подключение готовых решений к файлу</h2>
+        <pre>
+            <code class="mark">import math as m  # подключаем модуль math</code>
+            <code>#              ^ алиас - переименование модуля</code>
+            <code># использование: возводим 2 в степень 3</code>
+            <code>pow = <mark>m</mark>.pow(2, 3)</code>
+            <code>print(pow)  # 8</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Метод в модуле</h2>
+        <pre>
+            <code>import math as m  # подключаем модуль math</code>
+            <code># использование: возводим 2 в степень 3</code>
+            <code>pow = <mark>m</mark>.pow(2, 3)</code>
+            <code class="mark">#       ^^^ метод из модуля</code>
+            <code>print(pow)  # 8</code>
+            <code>#     ^^^ переменная</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Написание функции</h2>
+    </section>
+
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>написать функцию деления с остатком. Результаты должны печататься на экран</small></h2>
+        <ol>
+            <li class="next">Определить функцию</li>
+            <li class="next">
+                Определить параметры
+                <ol>
+                    <li class="next">делимое <code>int</code></li>
+                    <li class="next">делитель <code>int</code></li>
+                    <li class="next">выводить ли остаток <code>bool</code> - необязательный</li>
+                </ol>
+            </li>
+        </ol>
+    </section>
+    <section class="slide">
+        <h2><b>Задача</b>: <br><small>написать функцию деления с остатком. Результаты должны печататься на экран</small></h2>
+        <pre>
+            <code>def divide(a, b, <mark>with_mod=False</mark>):</code>
+            <code>  pass  # пустое тело функции</code>
+        </pre>
+        <b>kwarg (keyword argument)</b> — аргумент со значением по умолчанию. Его можно не заполнять при вызове функции.
+    </section>
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(a, b, with_mod=False):</code>
+                        <code class="next">  res = 1</code>
+                        <code class="next">  while res * b < a:</code>
+                        <code class="next">     res += 1</code>
+                        <code class="next">  res -= 1</code>
+                        <code class="next">  print("Результат", res)</code>
+                        <code class="next">  if with_mod:</code>
+                        <code class="next">     mod = a - res * b</code>
+                        <code class="next">     print("Остаток", mod)</code>
+                        <code class="next">  return res</code>
+                    </pre>
+                </td>
+                <td class="next">
+                    <h2>Проверка</h2>
+                    <pre>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(first, second, with_mod)</code>
+                        <code># Делим 25 на 4
+# Результат 6
+# Остаток 1
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(<mark>a</mark>, <mark class="important">b</mark>, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  res -= 1</code>
+                        <code>  print("Результат", res)</code>
+                        <code>  if with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>     print("Остаток", mod)</code>
+                        <code>  return res</code>
+                    </pre>
+                </td>
+                <td>
+                    <h2>Проверка</h2>
+                    <pre>
+                        <code><mark>first</mark> = 25</code>
+                        <code><mark class="important">second</mark> = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(<mark>first</mark>, <mark class="important">second</mark>, with_mod)</code>
+                        <code># Делим 25 на 4
+# Результат 6
+# Остаток 1
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2>Области видимости</h2>
+        <pre>
+            <code>def divide(a, b, with_mod=False):</code>
+            <code>  <mark class="important"># функция: first, second - тут не существует</mark></code>
+            <code>&nbsp;</code>
+            <code class="mark"># глобальная: a, b - тут не существует</code>
+            <code class="mark">first = 25</code>
+            <code class="mark">second = 4</code>
+            <code class="mark">with_mod = True</code>
+            <code class="mark">divide(first, second, with_mod)</code>
+        </pre> 
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Повтор</h2>
+    </section>
+
+    <section class="slide">
+        <ul>
+            <li><b>Ключевые слова</b>: <pre><code>if in for def return break continue...</code></pre></li>
+            <li><b>Функции</b>: <pre><code>print() input() range() ...</code></pre></li>
+            <li><b>Переменные</b> — создаются разработчиком и называются по-разному: 
+                <pre><code>text animal name num ...</code></pre></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Тест</h2>
+    </section>
+
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(a, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  if with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = <mark class="important">25</mark></code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>Переменная</li>
+                        <li>Числовое значение</li>
+                        <li>Строковое значение</li>
+                    </ol>
+                    <b class="next">Ответ: Числовое значение</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(a, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  if with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code><mark class="important">with_mod</mark> = True</code>
+                        <code>print("with_mod")</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>Логическая переменная</li>
+                        <li>Числовая переменная</li>
+                        <li>Логическое значение</li>
+                    </ol>
+                    <b class="next">Ответ: Логическая переменная</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(a, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  if with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>print(<mark class="important">"with_mod"</mark>)</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>Логическая переменная</li>
+                        <li>Строковое значение</li>
+                        <li>Строковая переменная</li>
+                    </ol>
+                    <b class="next">Ответ: Строковое значение</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(<mark class="important">a</mark>, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  if with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>Переменная</li>
+                        <li>Аргумент функции</li>
+                        <li>Ключевое слово</li>
+                    </ol>
+                    <b class="next">Ответ: Аргумент функции</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(a, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  <mark class="important">if</mark> with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>Аргумент функции</li>
+                        <li>Условный оператор</li>
+                        <li>Строковое значение</li>
+                    </ol>
+                    <b class="next">Ответ: Условный оператор</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(a, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  if with_mod:</code>
+                        <code>     <mark class="important">mod</mark> = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>Строковая переменная</li>
+                        <li>Числовая переменная</li>
+                        <li>Ключевое слово</li>
+                    </ol>
+                    <b class="next">Ответ: Числовая переменная</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+    
+    <section class="slide">
+        <table class="condensed">
+            <tr>
+                <td>
+                    <pre>
+                        <code>def divide(<mark class="important">a</mark>, b, with_mod=False):</code>
+                        <code>  res = 1</code>
+                        <code>  while res * b < a:</code>
+                        <code>     res += 1</code>
+                        <code>  # ...</code>
+                        <code>  if with_mod:</code>
+                        <code>     mod = a - res * b</code>
+                        <code>  return res</code>
+                        <code>first = 25</code>
+                        <code>second = 4</code>
+                        <code>with_mod = True</code>
+                        <code>divide(first, second, with_mod)</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Какое значение примет переменная <code>a</code> внутри функции?</b>
+                    <ol>
+                        <li>4</li>
+                        <li>True</li>
+                        <li>25</li>
+                    </ol>
+                    <b class="next">Ответ: 25</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code><mark class="important">str_num</mark> = input()  # Вводим 42</code>
+                        <code>print(str_num * 2)</code>
+                        <code>num = int(str_num)</code>
+                        <code>print(str_num * 2)</code>
+                        <code>print(bool(num))</code>
+                        <code>print(bool(0))</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Значение какого типа будет записано в эту переменную?</b>
+                    <ol>
+                        <li><code>int</code></li>
+                        <li><code>string</code></li>
+                        <li><code>bool</code></li>
+                    </ol>
+                    <b class="next">Ответ: string</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code>str_num = input()  # Вводим 42</code>
+                        <code><mark class="important">print(str_num * 2)</mark></code>
+                        <code>num = int(str_num)</code>
+                        <code>print(str_num * 2)</code>
+                        <code>print(bool(num))</code>
+                        <code>print(bool(0))</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Что будет напечатано в результате выполнения этой строчке?</b>
+                    <ol>
+                        <li><code>42</code></li>
+                        <li><code>84</code></li>
+                        <li><code>4242</code></li>
+                    </ol>
+                    <b class="next">Ответ: 4242</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code>str_num = input()  # Вводим 42</code>
+                        <code>print(str_num * 2)</code>
+                        <code>num = int(str_num)</code>
+                        <code><mark class="important">print(str_num * 2)</mark></code>
+                        <code>print(bool(num))</code>
+                        <code>print(bool(0))</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Что будет напечатано в результате выполнения этой строчке?</b>
+                    <ol>
+                        <li><code>42</code></li>
+                        <li><code>84</code></li>
+                        <li><code>4242</code></li>
+                    </ol>
+                    <b class="next">Ответ: 84</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code>str_num = input()  # Вводим 42</code>
+                        <code>print(str_num * 2)</code>
+                        <code>num = int(str_num)</code>
+                        <code><mark class="important">print(str_num * 2)</mark></code>
+                        <code>print(bool(num))</code>
+                        <code>print(bool(0))</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>подключение модуля</li>
+                        <li>вызов функции</li>
+                    </ol>
+                    <b class="next">Ответ: вызов функици</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <td>
+                    <pre>
+                        <code>str_num = input()  # Вводим 42</code>
+                        <code>print(str_num * 2)</code>
+                        <code>num = int(str_num)</code>
+                        <code>print(str_num * 2)</code>
+                        <code>print(bool(num))</code>
+                        <code>print(bool(<mark class="important">0</mark>))</code>
+                    </pre>
+                </td>
+                <td class="pl">
+                    <b>Чем является выделенный кусок кода?</b>
+                    <ol>
+                        <li>числовая переменное</li>
+                        <li>числовое значение</li>
+                        <li>логическое значение</li>
+                    </ol>
+                    <b class="next">Ответ: числовое значение</b>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">👏</h2>
+    </section>
+
+    <div class="progress"></div>
+    <link rel="stylesheet" href="node_modules/highlight.js/styles/github-gist.css">
+
+    <script src="shower/shower.js"></script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script>
+        document.querySelectorAll('code').forEach(elem => elem.classList.add('python'));
+        hljs.initHighlightingOnLoad();
+        document.querySelectorAll('.slide').forEach(elem => elem.addEventListener('click', () => shower.next()));
+    </script>
+
+    <!-- Copyright © 2020 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
